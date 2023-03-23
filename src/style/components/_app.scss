@@ -1,0 +1,107 @@
+h1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: $bigPadding;
+  text-align: center;
+  font-style: italic;
+  background-color: $darkerColor;
+  color: #fff;
+}
+
+.editor {
+  margin: 6rem 1vmax 0;
+  padding: $bigPadding;
+  border-style: groove;
+  border-radius: 1vmax;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.tagslist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tag {
+  @include flexible(flex-start, center, row);
+  gap: 1vmin;
+  padding: 0.5vmin 1vmin;
+  background-color: $darkColor;
+  font-size: 16px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 1vmin;
+  @include noBorderCursor;
+}
+
+.tag.green {
+  background-color: rgba(0, 255, 0, 0.5);
+}
+
+.row {
+  @include flexible(flex-start, center, row);
+  margin-bottom: 1vmin;
+  gap: 1vmin;
+}
+
+.row:last-child {
+  margin-bottom: 0;
+}
+
+.input {
+  padding: $smallPadding;
+  flex: 1;
+  font-size: 16px;
+  min-height: 5rem;
+  background: $darkColor;
+  color: #fff;
+  border: none;
+  outline: none;
+}
+
+.cursor {
+  color: blue;
+  animation: pulse infinite 1s;
+}
+
+button {
+  background: $darkerColor;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  @include noBorderCursor;
+}
+
+.note {
+  padding: $smallPadding;
+  flex: 1;
+  border-style: ridge;
+  border-radius: 1vmin;
+  background-color: $darkColor;
+  transition: all 0.5s;
+}
+
+.editBtn,
+.deleteBtn {
+  height: min-content;
+  border: none;
+}
+
+.editBtn {
+  background-color: green;
+}
+
+.deleteBtn {
+  background-color: tomato;
+  border-radius: 50%;
+}
