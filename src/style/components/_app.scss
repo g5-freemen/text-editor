@@ -88,7 +88,8 @@ button {
   border-style: ridge;
   border-radius: 1vmin;
   background-color: $darkColor;
-  transition: all 0.5s;
+  text-transform: none;
+  font-weight: 400;
 }
 
 .editBtn,

@@ -41,7 +41,7 @@
   ],
   "rules": {
     "max-len": ["warn", { "code": 120 }],
-    "no-confusing-arrow": ["error", { "allowParens": true, "onlyOneSimpleParam": false }],
+    "no-confusing-arrow": ["warn", { "allowParens": true, "onlyOneSimpleParam": false }],
     "implicit-arrow-linebreak": ["warn", "beside"],
     "function-paren-newline": "warn",
     "react/jsx-one-expression-per-line": "warn",

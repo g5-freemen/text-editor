@@ -68,22 +68,18 @@ export default function App() {
   };
 
   const highlightNote = (note: Note) => {
-    const { text } = note;
+    const textArr = note.text.split(highlightRegex);
+    const matchArr = note.text.match(highlightRegex) || [];
+    const matchEl = (i: number) => matchArr[i] && <b>{matchArr[i].replace('#', '')}</b>;
+    const isTagFirst = note.text.startsWith('#');
 
-    return text.split(' ').map((word: string) => {
-      if (!word) return <React.Fragment key={uuid()}>&nbsp;</React.Fragment>;
-
-      if (note.tags.includes(word)) {
-        return (
-          <b key={uuid()}>
-            {word.replace('#', '')}
-            &nbsp;
-          </b>
-        );
-      }
-
-      return <span key={uuid()}>{word}&nbsp;</span>;
-    });
+    return textArr.map((word, i) => (
+      <React.Fragment key={uuid()}>
+        {isTagFirst && i === 0 && matchEl(i)}
+        {word.replaceAll(' ', '\u00A0')}
+        {((isTagFirst && i !== 0) || !isTagFirst) && matchEl(i)}
+      </React.Fragment>
+    ));
   };
 
   const handleEditNote = (text: string) => {
